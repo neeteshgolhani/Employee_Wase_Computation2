@@ -1,5 +1,7 @@
 import java.util.Random;
 public class EmployeeWase {
+    public static final int FULL_TIME = 2;
+    public static final int PART_TIME = 1;
     public static void main(String[] args) {
         System.out.println("Welcome to the EmployeeWageComputationalProgram");
         Random random = new Random();
@@ -7,18 +9,18 @@ public class EmployeeWase {
         //Check if employee is present
         int WagePerHr = 20;
         int dailyWage, workingHrs;
-        if (present == 0) {
-            //Employee is absent
-            workingHrs = 0;
-            System.out.println("Employee is absent");
-        } else if (present == 1) {
-            //Employee working as part-time
-            workingHrs = 8;
-            System.out.println("Employee working as part-time");
-        } else {
-            //Employee working as full time
-            workingHrs = 16;
-            System.out.println("Employee working as full time");
+        switch (present){
+            case FULL_TIME :
+                workingHrs = 8;
+                System.out.println("Employee Working Fullday");
+                break;
+            case PART_TIME:
+                workingHrs =4;
+                System.out.println("Employee Working Part Time");
+                break;
+            default:
+                workingHrs = 0;
+                System.out.println("Employee Absent");
         }
         dailyWage = workingHrs * WagePerHr;
         System.out.println("Daily wage is " + dailyWage);
