@@ -1,14 +1,17 @@
 import java.util.Random;
-
 public class EmployeeWase {
     public static void main(String[] args) {
         System.out.println("Welcome to the EmployeeWageComputationalProgram");
         Random random = new Random();
         int present = random.nextInt(2);
         //Check if employee is present
+        int WagePerHr =20;
+        int wrkHrs = 8;
+        int dailyWage = present * WagePerHr * wrkHrs;
+
         if (present == 1)
-            System.out.println("Employee is present.");
+            System.out.println("Employee is present and Daily Wage Is " + dailyWage);
         else
-            System.out.println("Employee is absent.");
+            System.out.println("Employee is absent so Daily Wage is "+ dailyWage);
     }
 }
